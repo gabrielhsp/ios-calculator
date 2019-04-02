@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var numberOnScreen = Double()
+    
+    @IBOutlet weak var labelCalculatorResult: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
+    @IBAction func operationsActions(_ sender: UIButton) {
+    }
+    
+    @IBAction func numbers(_ sender: UIButton) {
+        labelCalculatorResult.text = labelCalculatorResult.text! + String(sender.tag - 1)
+        numberOnScreen = Double(labelCalculatorResult.text!)!
+    }
 }
 
